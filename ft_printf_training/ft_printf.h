@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aautin <aautin@student.42.fr >             +#+  +:+       +#+        */
+/*   By: aautin <aautin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 19:24:39 by aautin            #+#    #+#             */
-/*   Updated: 2024/03/04 19:39:45 by aautin           ###   ########.fr       */
+/*   Updated: 2024/03/04 23:21:19 by aautin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <stdarg.h>
 
 // hexa.c
-int		ft_puthexa(int nbr, char maj_flag);
-int		ft_putadress(int nbr);
+int		ft_puthexa(unsigned int nbr, char maj_flag);
+int		ft_putadress(unsigned long nbr);
 
 // decimal.c
 int		ft_putint(int nbr);
