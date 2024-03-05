@@ -23,7 +23,7 @@ static int  insertion(const char *format, va_list args)
     if (*format == 's')
         return (ft_putstr(va_arg(args, char *)));
     if (*format == 'd' || *format == 'i')
-        return (ft_putint(va_arg(args, int)));
+        return (ft_putint(va_arg(args, unsigned int)));
     if (*format == 'u')
         return (ft_putuint(va_arg(args, unsigned int)));
     if (*format == 'x' || *format == 'X')
