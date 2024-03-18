@@ -1,14 +1,16 @@
 int power(int nbr, char power)
 {
-    if (power == 0)
+    int	res = nbr;
+
+	if (power == 0)
         return (1);
     while (--power)
-        nbr *= nbr;
-    return (nbr);
+        res *= nbr;
+    return (res);
 }
 
 int isPalindrome(int x) {
-    int     temp = 1;
+    int     temp = 10;
     int     xReverse = x;
     char    xSize = 1;
 
