@@ -1,42 +1,21 @@
-int power(int nbr, char power)
-{
-    int	res = nbr;
+bool isPalindrome(int x) {
+    long int    temp = x;
+    long int    xReverse = 0;
+    long int    power = 10;
 
-	if (power == 0)
-        return (1);
-    while (--power)
-        res *= nbr;
-    return (res);
-}
+    if (x < 0)
+        return 0;
 
-int isPalindrome(int x) {
-    int     temp = 10;
-    int     xReverse = x;
-    char    xSize = 1;
+    while (x / power)
+        power *= 10;
 
-    while (xReverse / 10)
+    while (temp)
     {
-        xReverse /= 10;
-        xSize++;
+        power /= 10;
+        xReverse += (temp % 10) * power;
+        temp /= 10; 
     }
-    xReverse = 0;
-    while (xSize)
-    {
-        xReverse = xReverse + ((x / power(10, xSize - 1)) % temp);
-        xSize--;
-        temp = temp * 10;
-    }
-    return (xReverse);
+
+    return (xReverse == x);
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	for (int i = 1; i < argc; i++)
-	{
-		printf("[%s]: %d\n", argv[i], isPalindrome(atoi(argv[i])));
-	}
-	return (0);
-}
