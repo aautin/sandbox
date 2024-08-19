@@ -6,50 +6,37 @@
 class Base
 {
 	public:
-		Base(): baseName("baseName") {}
+		Base(): number1(0), number2(0) {}
+		Base(int n1, int n2): number1(n1), number2(n2) {}
 		~Base() {}
 
-		virtual std::string getName() const { return baseName; }
-		void setName(std::string i) { baseName += i; }
+		int 				getNumber1() const { return number1; }
+		int 				getNumber2() const { return number2; }
 
 	protected:
-		std::string	baseName;
+		int			number1;
+		int			number2;
 };
 
 class Derived1: public virtual Base
 {
 	public:
-		Derived1(): derived1Name("Derived1Name") {}
+		Derived1() { Base::number1 = 1; }
 		~Derived1() {}
-
-		std::string getName() const override { return derived1Name; }
-
-	protected:
-		std::string	derived1Name;
 };
 
 class Derived2: public virtual Base
 {
 	public:
-		Derived2(): derived2Name("Derived2Name") {}
+		Derived2() { }
 		~Derived2() {}
-
-		std::string getName() const override { return derived2Name; }
-
-	protected:
-		std::string	derived2Name;
 };
 
 class Diamond: public Derived1, public Derived2
 {
 	public:
-		Diamond(): DiamondName("DiamondName") {}
+		Diamond() {}
 		~Diamond() {}
-
-		std::string getName() const override { return DiamondName; }
-
-	protected:
-		std::string	DiamondName;
 };
 
 #endif
